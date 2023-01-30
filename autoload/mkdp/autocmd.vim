@@ -4,7 +4,7 @@ function! mkdp#autocmd#init() abort
     autocmd!
     " refresh autocmd
     if g:mkdp_refresh_slow
-      autocmd CursorHold,BufWrite,InsertLeave <buffer> call mkdp#rpc#preview_refresh()
+      autocmd BufWrite <buffer> call mkdp#rpc#preview_refresh()
     else
       autocmd CursorHold,CursorHoldI,CursorMoved,CursorMovedI <buffer> call mkdp#rpc#preview_refresh()
     endif
